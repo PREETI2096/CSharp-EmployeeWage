@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace EmployeeWageComputationProgram
 {
-    internal class EmployeeWage
+    public class EmployeeWage
     {
-        public void EmpDailyWage()
+        public void EmpWagePartTime()
         {
             //define constants
-            int IS_FULL_TIME = 1;
+            int IS_PART_TIME = 1;
+            int IS_FULL_TIME = 2;
             int Emp_Rate_Per_Hr = 20;
 
             //variables
@@ -21,13 +22,18 @@ namespace EmployeeWageComputationProgram
             //random function is to create random numbers
             Random random = new Random();
             //
-            int empCheck = random.Next(0, 2);
-            //use if else statement to check if employee is present or absent
+            int empCheck = random.Next(0, 3);
 
+            //use if else if statement to get employee wage
             if (empCheck == IS_FULL_TIME)
             {
                 empHrs = 8;
-                Console.WriteLine("Employee is Present");
+                Console.WriteLine("Employee is present fully");
+            }
+            else if (empCheck == IS_PART_TIME)
+            {
+                empHrs = 4;
+                Console.WriteLine("Employee is present party");
             }
             else
             {
@@ -39,4 +45,5 @@ namespace EmployeeWageComputationProgram
         }
     }
 }
+
 
