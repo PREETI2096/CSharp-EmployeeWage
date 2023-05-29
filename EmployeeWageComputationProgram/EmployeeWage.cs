@@ -8,12 +8,11 @@ namespace EmployeeWageComputationProgram
 {
     public class EmployeeWage
     {
-        public void EmpWagePartTime()
+        public const int IS_PART_TIME = 1;
+        public const int IS_FULL_TIME = 2;
+        public const int Emp_Rate_Per_Hr = 20;
+        public void EmpWageSwitch()
         {
-            //define constants
-            int IS_PART_TIME = 1;
-            int IS_FULL_TIME = 2;
-            int Emp_Rate_Per_Hr = 20;
 
             //variables
             int empHrs = 0;
@@ -24,23 +23,24 @@ namespace EmployeeWageComputationProgram
             //
             int empCheck = random.Next(0, 3);
 
-            //use if else if statement to get employee wage
-            if (empCheck == IS_FULL_TIME)
+            //use Switch case statement to get employee wage
+
+            switch (empCheck)
             {
-                empHrs = 8;
-                Console.WriteLine("Employee is present fully");
-            }
-            else if (empCheck == IS_PART_TIME)
-            {
-                empHrs = 4;
-                Console.WriteLine("Employee is present party");
-            }
-            else
-            {
-                empHrs = 0;
-                Console.WriteLine("Employee is Absent");
+                case IS_PART_TIME:
+                    empHrs = 4;
+                    break;
+
+                case IS_FULL_TIME:
+                    empHrs = 8;
+                    break;
+
+                default:
+                    empHrs = 0;
+                    break;
             }
             empWage = empHrs * Emp_Rate_Per_Hr;
+
             Console.WriteLine("Emp Wage :" + empWage);
         }
     }
