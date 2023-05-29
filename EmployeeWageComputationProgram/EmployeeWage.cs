@@ -8,10 +8,15 @@ namespace EmployeeWageComputationProgram
 {
     internal class EmployeeWage
     {
-        public void EmployeeCheckAttendance()
+        public void EmpDailyWage()
         {
             //define constants
             int IS_FULL_TIME = 1;
+            int Emp_Rate_Per_Hr = 20;
+
+            //variables
+            int empHrs = 0;
+            int empWage = 0;
 
             //random function is to create random numbers
             Random random = new Random();
@@ -21,12 +26,17 @@ namespace EmployeeWageComputationProgram
 
             if (empCheck == IS_FULL_TIME)
             {
-                Console.WriteLine("Employee is present");
+                empHrs = 8;
+                Console.WriteLine("Employee is Present");
             }
             else
             {
-                Console.WriteLine("Employee is absent");
+                empHrs = 0;
+                Console.WriteLine("Employee is Absent");
             }
+            empWage = empHrs * Emp_Rate_Per_Hr;
+            Console.WriteLine("Emp Wage :" + empWage);
         }
     }
 }
+
