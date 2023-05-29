@@ -6,7 +6,7 @@
         {
             Console.WriteLine("Welcome to Employee Wage Computation Program");
             EmployeeWage emp = new EmployeeWage();
-            emp.EmpWageForMonth();
+            emp.EmpWageTotalWorkingDays();
         }
     }
 }
